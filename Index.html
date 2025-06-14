@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,84 +12,105 @@
       background: linear-gradient(to bottom, #1f0033, #2c003e);
       color: #fff;
       text-align: center;
-    }.header {
-  padding: 30px 20px;
-  font-size: 2em;
-  color: #ff7de9;
-  text-shadow: 0 0 10px #ff7de9;
-}
+    }
 
-.highlight {
-  color: #ff80c0;
-  font-size: 1.3em;
-}
+    .header {
+      padding: 30px 20px;
+      font-size: 2em;
+      color: #ff7de9;
+      text-shadow: 0 0 10px #ff7de9;
+    }
 
-.btn {
-  background: linear-gradient(to right, #ff2bb1, #ff85e6);
-  border: none;
-  padding: 12px 30px;
-  margin-top: 25px;
-  font-size: 1em;
-  color: white;
-  border-radius: 30px;
-  cursor: pointer;
-  box-shadow: 0 0 10px #ff2bb1;
-}
+    .highlight {
+      color: #ff80c0;
+      font-size: 1.3em;
+    }
 
-.container {
-  padding: 20px;
-  max-width: 600px;
-  margin: 0 auto;
-}
+    .btn {
+      background: linear-gradient(to right, #ff2bb1, #ff85e6);
+      border: none;
+      padding: 12px 30px;
+      margin-top: 25px;
+      font-size: 1em;
+      color: white;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ff2bb1;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
 
-.card {
-  background-color: rgba(255, 255, 255, 0.05);
-  margin: 15px 0;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(255, 0, 144, 0.4);
-}
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #ff2bb1;
+    }
 
-.footer {
-  font-size: 0.9em;
-  padding: 20px;
-  color: #ffb8f0;
-}
+    .container {
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
-.icon {
-  font-size: 1.5em;
-}
+    .card {
+      background-color: rgba(255, 255, 255, 0.05);
+      margin: 15px 0;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(255, 0, 144, 0.4);
+    }
 
+    .footer {
+      font-size: 0.9em;
+      padding: 20px;
+      color: #ffb8f0;
+    }
+
+    .icon {
+      font-size: 1.5em;
+    }
+
+    a {
+      color: #ffb8f0;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
+
   <div class="header">
     Feliz 3 meses de namoro 💖
-  </div>  <div class="container">
+  </div>
+
+  <div class="container">
     <p class="highlight">[ 13/06/2025 ]</p>
     <p>Esse site foi feito pra mostrar o quanto você é especial, minha branquinha. 💗</p>
-    <button class="btn">✨ Entrar ✨</button><div class="card">
-  <strong>Nana</strong><br>
-  Eu te dedico esse site como presente de 3 meses de namoro. ✨
-</div>
 
-<div class="card">
-  <strong> Lipe.zyx </strong><br>
-  Eu, Lipe.zyx, sou o responsável por esse site. 
-</div>
+    <!-- Botão com redirecionamento -->
+    <button class="btn" onclick="window.location.href='home.html'">✨ Entrar ✨</button>
 
-<div class="card">
-  <strong>Com todo meu amor</strong><br>
-  Feliz 3 meses de namoro minha princesa. Eu espero que goste. 💕
-</div>
+    <div class="card">
+      <strong>Nana</strong><br>
+      Eu te dedico esse site como presente de 3 meses de namoro. ✨
+    </div>
 
-<div class="card">
-  <strong>De Lipe pra Nana</strong><br>
-  Um presente fofo pra você, minha princesa. ❤️
-</div>
+    <div class="card">
+      <strong>Lipe.zyx</strong><br>
+      Eu, Lipe.zyx, sou o responsável por esse site.
+    </div>
 
-  </div>  <div class="footer">
-    © Suporte – <a href="#" style="color: #ffb8f0; text-decoration: underline;">Lipe.zyx</a>
+    <div class="card">
+      <strong>Com todo meu amor</strong><br>
+      Feliz 3 meses de namoro minha princesa. Eu espero que goste. 💕
+    </div>
+
+    <div class="card">
+      <strong>De Lipe pra Nana</strong><br>
+      Um presente fofo pra você, minha princesa. ❤️
+    </div>
   </div>
+
+  <div class="footer">
+    © Suporte – <a href="#">Lipe.zyx</a>
+  </div>
+
 </body>
 </html>
