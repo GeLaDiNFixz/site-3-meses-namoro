@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Para Nana 💗</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #0a001a;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      overflow-x: hidden;
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .container {
+      margin: 40px 0;
+      text-align: center;
+      background: rgba(255 255 255 / 0.04);
+      border: 1px solid rgba(255 105 180 / 0.3);
+      border-radius: 25px;
+      padding: 30px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.35);
+      width: 90vw;
+      max-width: 480px;
+      color: #ffcee7;
+    }
+
+    .coraçõezinhos {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .coraçõezinhos span {
+      position: absolute;
+      font-size: 20px;
+      animation: flutuar 6s linear infinite;
+      color: #ff69b4;
+      opacity: 0.7;
+    }
+
+    @keyframes flutuar {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    #imagem-topo,
+    #imagem-sobre-painel,
+    #painel-musica,
+    #texto-holograma,
+    #gif-container,
+    #botao-gif,
+    #mensagem-final {
+      opacity: 0;
+      transition: opacity 1.2s ease, transform 1s ease;
+      transform: translateY(20px);
+    }
+
+    .mostrar {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    #imagem-topo {
+      width: 220px;
+      margin: 10px auto 20px auto;
+      display: block;
+      border: 2px solid #ff69b4;
+      border-radius: 15px;
+      box-shadow: 0 0 12px #ff69b4aa;
+    }
+
+    #imagem-sobre-painel {
+      width: 160px;
+      margin: 10px auto 15px auto;
+      display: block;
+    }
+
+    #painel-musica {
+      margin: 10px auto;
+      padding: 15px;
+      background: rgba(255, 105, 180, 0.15);
+      border: 1px solid #ff69b4;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 12px #ff69b4cc;
+    }
+
+    #titulo-musica {
+      color: #ffd3e9;
+      font-weight: bold;
+      font-size: 1.1em;
+      text-shadow: 0 0 5px #ff69b4aa;
+    }
+
+    #painel-musica button {
+      font-size: 1.2em;
+      padding: 10px;
+      border-radius: 50%;
+      background: #ff69b4;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #controle-volume {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95em;
+      color: #ffd3e9;
+    }
+
+    #volume-slider {
+      width: 100px;
+      accent-color: #ff69b4;
+      cursor: pointer;
+      height: 6px;
+      border-radius: 4px;
+      background: #ffaad4;
+      box-shadow: 0 0 4px #ff69b4aa;
+    }
+
+    #texto-holograma {
+      white-space: pre-wrap;
+      margin: 25px 0;
+      font-size: 1.2em;
+      color: #82e9ff;
+      text-shadow: 0 0 8px #0ff;
+    }
+
+    #gif-container {
+      margin-top: 20px;
+    }
+
+    #gif-container video {
+      width: 220px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px #ff69b4aa;
+    }
+
+    #botao-gif {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #ff69b4;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ff69b4aa;
+    }
+
+    #mensagem-final {
+      margin-top: 30px;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+
+    #mensagem-final.mostrar {
+      opacity: 1;
+    }
+
+    .abraço-anima {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: desdobrar 1.2s ease forwards;
+    }
+
+    .img-abraço {
+      width: 200px;
+      max-width: 80%;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #ff69b4aa;
+      margin-bottom: 15px;
+    }
+
+    .texto-abraço {
+      font-size: 1.1em;
+      color: #ffd2eb;
+      text-shadow: 0 0 5px #ff69b4aa;
+      animation: piscar 2.5s infinite;
+      max-width: 90%;
+    }
+
+    @keyframes desdobrar {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes piscar {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+  </style>
+</head>
+<body>
+  <div class="coraçõezinhos"></div>
+
+  <div class="container">
+    <img id="imagem-topo" src="https://files.catbox.moe/0fz1vs.jpg" alt="Imagem especial">
+    <img id="imagem-sobre-painel" src="https://files.catbox.moe/kkjw67.png" alt="Imagem sobre o painel de música">
+
+<div id="painel-musica" class="painel-musica-avancado">
+  <div class="cover-area">
+    <img src="https://files.catbox.moe/gudvgc.png" alt="Capa do Álbum" class="cover-img" />
+    <div class="info-musica">
+      <h4 class="titulo">Aliança</h4>
+      <p class="artista">Tribalistas</p>
+    </div>
+  </div>
+  <div class="controle-musica">
+    <button id="btn-back" disabled>⏮️</button>
+    <button id="btn-play">▶️</button>
+    <button id="btn-pause" disabled>⏸️</button>
+    <button id="btn-next" disabled>⏭️</button>
+  </div>
+  <div class="barra-volume">
+    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5" />
+  </div>
+</div>
+
+<style>
+  .painel-musica-avancado {
+    margin: 20px auto;
+    background: #1e1e2f;
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .cover-area {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .cover-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ff69b4aa;
+  }
+
+  .info-musica {
+    text-align: left;
+  }
+
+  .titulo {
+    font-size: 1.2em;
+    margin: 0;
+    color: #ffb6d9;
+  }
+
+  .artista {
+    font-size: 0.9em;
+    color: #cfcfcf;
+    margin: 0;
+  }
+
+  .controle-musica button {
+    background: transparent;
+    border: none;
+    font-size: 1.5em;
+    color: #ff69b4;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: transform 0.2s;
+  }
+
+  .controle-musica button:hover {
+    transform: scale(1.2);
+  }
+
+  .barra-volume {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .barra-volume input[type="range"] {
+    width: 100%;
+    accent-color: #ff69b4;
+  }
+</style>
+
+
+    <pre id="texto-holograma"></pre>
+
+    <div id="gif-container">
+      <video autoplay loop muted playsinline>
+        <source src="https://files.catbox.moe/l8jtmr.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <button id="botao-gif">Clique aqui pra receber um abracinho 💕</button>
+
+    <div id="mensagem-final">
+      <div class="abraço-anima">
+        <img src="https://files.catbox.moe/pgqqth.png" alt="Abraço carinhoso" class="img-abraço" />
+        <p class="texto-abraço">Sinta esse abraço quentinho vindo de mim pra você, Nana... mesmo de longe, meu carinho te envolve como um cobertor de amor. 💖</p>
+      </div>
+    </div>
+  </div>
+
+  <audio id="meuAudio" src="https://files.catbox.moe/hori4y.mp3" preload="auto"></audio>
+
+  <script>
+    const audio = document.getElementById("meuAudio");
+    const btnPlay = document.getElementById("btn-play");
+    const btnPause = document.getElementById("btn-pause");
+    const volumeSlider = document.getElementById("volume-slider");
+    const coraçõezinhos = document.querySelector(".coraçõezinhos");
+
+    for (let i = 0; i < 25; i++) {
+      const heart = document.createElement("span");
+      heart.textContent = "💗";
+      heart.style.left = Math.random() * 100 + "%";
+      heart.style.animationDelay = Math.random() * 10 + "s";
+      coraçõezinhos.appendChild(heart);
+    }
+
+    btnPlay.onclick = () => {
+      audio.play();
+      btnPlay.disabled = true;
+      btnPause.disabled = false;
+    };
+
+    btnPause.onclick = () => {
+      audio.pause();
+      btnPlay.disabled = false;
+      btnPause.disabled = true;
+    };
+
+    volumeSlider.oninput = () => {
+      audio.volume = volumeSlider.value;
+    };
+
+    const texto = `💌 FELIZ 3 MESES DE NAMORO, NANA 💌\n-\nMESMO COM TODA ESSA DISTÂNCIA ENTRE A GENTE, VOCÊ CONTINUA SENDO A PESSOA MAIS IMPORTANTE NA MINHA VIDA.\nCADA MENSAGEM TUA, CADA “EU TE AMO” AQUECE O MEU CORAÇÃO DE UM JEITO QUE NEM SEI EXPLICAR.\n-\nNAMORAR À DISTÂNCIA NÃO É FÁCIL. DÓI ÀS VEZES. DÁ VONTADE DE TE PEGAR NO COLO, DE TE ABRAÇAR FORTE E DIZER QUE EU TE AMO MUITO.\nMAS MESMO ASSIM, A GENTE CONTINUARMOS JUNTOS, FIRME, COM UM AMOR QUE VENCE O TEMPO, ONDE NÓS NUNCA MUDARMOS UM COM O OUTRO DESDE O COMEÇO.\n-\nVOCÊ VALE CADA DIA DE ESPERA.\nCADA MADRUGADA ACORDADO PENSANDO EM NÓS.\nCADA PLANO PRA UM FUTURO ONDE EU POSSA FINALMENTE TE CHAMAR DE “MINHA ESPOSA”.\n-\nEU TE AMO DE UM JEITO QUE NEM A DISTÂNCIA CONSEGUE AFASTAR.\nE UM DIA, QUANDO A GENTE FINALMENTE SE ENCONTRAR, EU VOU OLHAR NOS TEUS OLHOS E DIZER:\n“A GENTE CONSEGUIU. E EU SEMPRE SOUBE QUE CONSEGUIRIA.”\n-\nFELIZ 3 MESES JUNTOS, NANA.\nVOCÊ É A MELHOR COISA QUE ACONTECEU NA MINHA VIDA. 🌹❤️`;
+
+    function mostrarElemento(id) {
+      document.getElementById(id).classList.add("mostrar");
+    }
+
+    function digitarTexto(callback) {
+      const el = document.getElementById("texto-holograma");
+      let i = 0;
+      function escrever() {
+        if (i < texto.length) {
+          el.textContent += texto.charAt(i);
+          i++;
+          setTimeout(escrever, 40);
+        } else {
+          if (callback) callback();
+        }
+      }
+      escrever();
+    }
+
+    window.onload = () => {
+      mostrarElemento("imagem-topo");
+      setTimeout(() => {
+        mostrarElemento("imagem-sobre-painel");
+        mostrarElemento("painel-musica");
+        audio.play().catch(() => {});
+        setTimeout(() => {
+          mostrarElemento("texto-holograma");
+          digitarTexto(() => {
+            mostrarElemento("gif-container");
+            setTimeout(() => {
+              mostrarElemento("botao-gif");
+            }, 1000);
+          });
+        }, 800);
+      }, 800);
+    };
+
+    document.getElementById("botao-gif").onclick = () => {
+      mostrarElemento("mensagem-final");
+    };
+  </script>
+</body>
+</html>
+
+
